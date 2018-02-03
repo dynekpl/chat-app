@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Czacik';
+
+  toggleComponent = false;
+  toggle(event) {
+    console.log('event', event);
+    this.toggleComponent = !this.toggleComponent;
+  }
 }

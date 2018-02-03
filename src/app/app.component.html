@@ -5,12 +5,10 @@
   </h1>
 </div>
 
-<span>Release: <b>2.0</b></span>
-<br>
-<div class="box-app">
-  <app-login></app-login>
-  <app-registration></app-registration>
-</div>
+<section class="box-app">
+  <app-login (login)="toggle($event)" *ngIf="toggleComponent"></app-login>
+  <app-registration (registration)="toggle($event)" *ngIf="!toggleComponent"></app-registration>
+</section>
 
 
 

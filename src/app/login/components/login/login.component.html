@@ -1,9 +1,11 @@
 <app-shared>
-  <h2>Login</h2>
+  <h2>Logowanie</h2>
 
   <div class="error" *ngFor="let error of validationMessages">{{error}}</div>
 
-  <button>Login</button>
+  <button class="btn-submit">Zaloguj</button>
+
+  <button class="btn-switch" (click)="toggleFunc()">Rejestracja</button>
 </app-shared>
 
 
