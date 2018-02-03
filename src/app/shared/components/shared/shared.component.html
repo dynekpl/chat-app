@@ -1,0 +1,13 @@
+<div class="box-shared">
+  <ng-content select="h2"></ng-content>
+  <div class="box-shared">
+    <form>
+      <input type="text" value="login">
+      <input type="text" value="password">
+
+      <ng-content select=".error"></ng-content>
+
+      <ng-content select="button"></ng-content>
+    </form>
+  </div>
+</div>
