@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Czacik';
+  title = 'Customer Service Chat';
 
   toggleComponent = false;
   toggle(event) {
