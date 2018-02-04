@@ -16,13 +16,6 @@ export class RegistrationComponent{
   constructor(private authenticationService : AuthenticationService){
   }
 
-  @Output()
-  registration = new EventEmitter();
-
-  toggleFunc() {
-    this.registration.emit('login');
-  }
-
   register(e, email, pass){
     e.preventDefault();
     this.authenticationService.register(email.value, pass.value);

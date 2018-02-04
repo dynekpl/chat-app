@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from './services/authentication.service';
 import {Subscription} from 'rxjs/Subscription';
+import {RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,8 @@ import {Subscription} from 'rxjs/Subscription';
 })
 export class AppComponent implements OnInit {
   title = 'Customer Service Chat';
-  toggleComponent = false;
   logged = false;
   sub: Subscription;
-
-  toggle(event) {
-    console.log('event', event);
-    this.toggleComponent = !this.toggleComponent;
-  }
 
   constructor(private authenticationService : AuthenticationService){
   }
@@ -29,10 +24,6 @@ export class AppComponent implements OnInit {
        console.log(res);
      this.logged = res;
    });
-  }
-
-  logIn(){
-    this.authenticationService.logIn();
   }
 
   logOut(){

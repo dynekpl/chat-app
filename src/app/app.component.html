@@ -7,8 +7,7 @@
 </div>
 
 <section class="box-app">
-  <app-login (login)="toggle($event)" (logged)="logIn($event)" *ngIf="toggleComponent && !logged"></app-login>
-  <app-registration (registration)="toggle($event)" *ngIf="!toggleComponent && !logged"></app-registration>
+  <router-outlet></router-outlet>
 </section>
 <button (click)="logOut()" *ngIf="logged">Wyloguj</button>
 <button (click)="removeMe()" *ngIf="logged">Usuń</button>

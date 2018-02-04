@@ -16,13 +16,6 @@ export class LoginComponent{
   constructor(private authenticationService : AuthenticationService){
   }
 
-  @Output()
-  login = new EventEmitter();
-
-  toggleFunc() {
-    this.login.emit('registration');
-  }
-
   logIn(e, email, pass){
     e.preventDefault(); // żeby się strona nie przeładowywała
     this.authenticationService.logIn(email.value, pass.value);
