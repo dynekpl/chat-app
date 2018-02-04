@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {AuthenticationService} from './services/authentication.service';
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-root',
@@ -7,29 +9,40 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'Customer Service Chat';
-
   toggleComponent = false;
-
   logged = false;
+  sub: Subscription;
 
   toggle(event) {
     console.log('event', event);
     this.toggleComponent = !this.toggleComponent;
   }
 
+  constructor(private authenticationService : AuthenticationService){
+  }
+
   ngOnInit() {
-    if (localStorage.getItem('logged') === 'true') {
-      this.logged = true;
-    }
+   this.logged =  this.authenticationService.loginCheck();
+
+   this.sub = this.authenticationService.loginStatus()
+     .subscribe((res) => {
+       console.log(res);
+     this.logged = res;
+   });
   }
 
   logIn(){
-    localStorage.setItem('logged', 'true');
-    this.logged = true;
+    this.authenticationService.logIn();
   }
 
   logOut(){
-    this.logged = false;
-    localStorage.setItem('logged', 'false');
+    this.authenticationService.logOut();
   }
+}
+
+export interface Menu{
+  name: string;
+  link: string;
+  icon: any;
+  subMenu: Menu;
 }

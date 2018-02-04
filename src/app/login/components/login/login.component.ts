@@ -1,34 +1,31 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {AuthenticationService} from '../../../services/authentication.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
 
   validationMessages = [
     'Incorrect email !!!!',
-    'Wrong emai !!!!'
+    'Wrong email !!!!'
   ];
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private authenticationService : AuthenticationService){
   }
 
   @Output()
   login = new EventEmitter();
 
-  @Output()
-  logged = new EventEmitter();
-
   toggleFunc() {
     this.login.emit('registration');
   }
 
-  logIn(){
-    this.logged.emit(true);
+  logIn(e){
+    e.preventDefault(); // żeby się strona nie przeładowywała
+    this.authenticationService.logIn();
   }
 
 }

@@ -1,14 +1,17 @@
 // angular imports
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
 // components
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 
 // modules
 import {LoginModule} from './login/login.module';
 import {RegistrationModule} from './registration/registration.module';
 import {SharedModule} from './shared/shared.module';
+
+// services
+import {AuthenticationService} from './services/authentication.service';
 
 // w tablicy declarations dodajemy komponenty
 // w tablicy import dodajemy moduły
@@ -24,7 +27,8 @@ import {SharedModule} from './shared/shared.module';
     RegistrationModule,
     SharedModule
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
