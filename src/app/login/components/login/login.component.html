@@ -1,7 +1,9 @@
 <app-shared>
   <h2 class="hdl-default">Logowanie</h2>
 
-  <div class="error" *ngFor="let error of validationMessages">{{error}}</div>
+  <div class="alert alert-danger" role="alert" *ngFor="let error of validationMessages">
+    {{error}}
+  </div>
 
   <button class="btn-submit">Zaloguj</button>
 

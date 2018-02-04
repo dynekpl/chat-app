@@ -7,6 +7,11 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
+  validationMessages = [
+    'User already exists !!!!',
+    'Email already used !!!!'
+  ];
+
   constructor() { }
 
   ngOnInit() {

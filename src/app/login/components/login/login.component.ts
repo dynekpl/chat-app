@@ -8,8 +8,8 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class LoginComponent implements OnInit {
 
   validationMessages = [
-    'Incorrect email',
-    'Wrong emai'
+    'Incorrect email !!!!',
+    'Wrong emai !!!!'
   ];
 
   constructor() { }
