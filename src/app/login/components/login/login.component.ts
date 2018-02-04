@@ -20,8 +20,15 @@ export class LoginComponent implements OnInit {
   @Output()
   login = new EventEmitter();
 
+  @Output()
+  logged = new EventEmitter();
+
   toggleFunc() {
     this.login.emit('registration');
+  }
+
+  logIn(){
+    this.logged.emit(true);
   }
 
 }
