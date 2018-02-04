@@ -5,7 +5,10 @@
     {{error}}
   </div>
 
-  <button class="btn-submit">Zarejestruj</button>
+  <input type="text" value="login" class="input-default" #email>
+  <input type="text" value="password" class="input-default" #pass>
+
+  <button class="btn-submit" (click)="register($event, email, pass)">Zarejestruj</button>
 
   <button class="btn-switch" (click)="toggleFunc()">Logowanie</button>
 </app-shared>

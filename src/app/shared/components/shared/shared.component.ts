@@ -12,4 +12,9 @@ export class SharedComponent implements OnInit {
   ngOnInit() {
   }
 
+  formSubmit(data){
+    data.preventDefault();
+    console.log(data);
+  }
+
 }

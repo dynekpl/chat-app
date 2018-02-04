@@ -11,6 +11,7 @@
   <app-registration (registration)="toggle($event)" *ngIf="!toggleComponent && !logged"></app-registration>
 </section>
 <button (click)="logOut()" *ngIf="logged">Wyloguj</button>
+<button (click)="removeMe()" *ngIf="logged">Usuń</button>
 
 
 

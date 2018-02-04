@@ -23,9 +23,9 @@ export class LoginComponent{
     this.login.emit('registration');
   }
 
-  logIn(e){
+  logIn(e, email, pass){
     e.preventDefault(); // żeby się strona nie przeładowywała
-    this.authenticationService.logIn();
+    this.authenticationService.logIn(email.value, pass.value);
   }
 
 }

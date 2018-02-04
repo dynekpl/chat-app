@@ -38,6 +38,10 @@ export class AppComponent implements OnInit {
   logOut(){
     this.authenticationService.logOut();
   }
+
+  removeMe(){
+    this.authenticationService.removeUser();
+  }
 }
 
 export interface Menu{

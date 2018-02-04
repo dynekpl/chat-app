@@ -1,10 +1,10 @@
 <div class="box-shared">
   <ng-content select="h2"></ng-content>
-    <form>
-      <input type="text" value="login" class="input-default">
-      <input type="text" value="password" class="input-default">
+    <form action="">
 
       <ng-content select=".alert"></ng-content>
+
+      <ng-content select="input"></ng-content>
 
       <ng-content select=".btn-submit"></ng-content>
     </form>
