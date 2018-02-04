@@ -9,8 +9,7 @@ import {AppComponent} from './app.component';
 import {LoginModule} from './login/login.module';
 import {RegistrationModule} from './registration/registration.module';
 import {SharedModule} from './shared/shared.module';
-import {RouterModule} from '@angular/router';
-//import {RoutingModule} from './router/routing.module';
+import {RoutingModule} from './router/routing.module';
 
 // services
 import {AuthenticationService} from './services/authentication.service';
@@ -21,12 +20,6 @@ import {RegistrationComponent} from './registration/components/registration/regi
 // w tablicy import dodajemy moduły
 // w tablicy providers dodajemy serwisy
 
-const ROUTES = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
-  {path: 'login', component: LoginComponent},
-  {path: 'registration', component: RegistrationComponent}
-];
-
 @NgModule({
   declarations: [
     AppComponent
@@ -36,7 +29,7 @@ const ROUTES = [
     LoginModule,
     RegistrationModule,
     SharedModule,
-    RouterModule.forRoot(ROUTES)
+    RoutingModule
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]
