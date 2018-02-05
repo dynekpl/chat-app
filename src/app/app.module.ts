@@ -15,6 +15,7 @@ import {RoutingModule} from './router/routing.module';
 import {AuthenticationService} from './services/authentication.service';
 import {LoginComponent} from './login/components/login/login.component';
 import {RegistrationComponent} from './registration/components/registration/registration.component';
+import {MenuComponent} from './menu/menu.component';
 
 // w tablicy declarations dodajemy komponenty
 // w tablicy import dodajemy moduły
@@ -22,7 +23,8 @@ import {RegistrationComponent} from './registration/components/registration/regi
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
